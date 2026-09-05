@@ -104,10 +104,65 @@ jobs:
         if: always()
         run: find "core/app/build/outputs/apk/${{ env.BUILD_TYPE_LOWER }}" -type f -name '*.apk' -print 2>/dev/null || true
 
-      - name: Upload APKs
+      - name: Package APK artifacts
+        if: success()
+        run: |
+          set -euo pipefail
+          APK_DIR="core/app/build/outputs/apk/${BUILD_TYPE_LOWER}"
+          mkdir -p artifacts
+          mapfile -t APKS < <(find "$APK_DIR" -maxdepth 1 -type f -name '*.apk' -print | sort)
+          if [ "${#APKS[@]}" -eq 0 ]; then
+            echo "No APK files were generated in $APK_DIR" >&2
+            exit 1
+          fi
+          cp "${APKS[@]}" artifacts/
+          (cd artifacts && sha256sum ./*.apk > SHA256SUMS.txt)
+          zip -j "artifacts/android-code-studio-${BUILD_TYPE_LOWER}-${GITHUB_RUN_NUMBER}.zip" artifacts/*.apk artifacts/SHA256SUMS.txt
+
+      - name: Upload APK artifacts
         uses: actions/upload-artifact@v4
         if: success()
         with:
           name: android-code-studio-${{ env.BUILD_TYPE_LOWER }}
-          path: core/app/build/outputs/apk/${{ env.BUILD_TYPE_LOWER }}/*.apk
+          path: artifacts/*
           if-no-files-found: error
+
+      - name: Send Release APKs to Telegram
+        if: env.BUILD_TYPE == 'Release' && github.event_name != 'pull_request'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.CHAT_ID }}
+          TELEGRAM_TOPIC_ID: ${{ secrets.RELEASE_TOPIC_ID }}
+        run: |
+          set -euo pipefail
+          if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
+            echo 'BOT_TOKEN and CHAT_ID repository secrets are required to send APKs to Telegram.' >&2
+            exit 1
+          fi
+
+          API="https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}"
+          COMMIT_MESSAGE="$(git log -1 --pretty=%s | cut -c1-180)"
+          CAPTION="Android Code Studio Release\nRun #${GITHUB_RUN_NUMBER} • ${GITHUB_SHA::12}\n${COMMIT_MESSAGE}"
+
+          send_args=(-F "chat_id=${TELEGRAM_CHAT_ID}")
+          if [ -n "$TELEGRAM_TOPIC_ID" ]; then
+            send_args+=(-F "message_thread_id=${TELEGRAM_TOPIC_ID}")
+          fi
+
+          response="$(curl --fail-with-body --silent --show-error --retry 3 --retry-delay 5 \
+            "${send_args[@]}" \
+            -F "text=${CAPTION}" \
+            "${API}/sendMessage")"
+          echo "$response" | grep -q '"ok":true' || { echo "$response" >&2; exit 1; }
+
+          while IFS= read -r apk; do
+            [ -n "$apk" ] || continue
+            filename="$(basename "$apk")"
+            response="$(curl --fail-with-body --silent --show-error --retry 3 --retry-delay 5 \
+              "${send_args[@]}" \
+              -F "caption=${CAPTION}\nAPK: ${filename}" \
+              -F "document=@${apk};type=application/vnd.android.package-archive" \
+              "${API}/sendDocument")"
+            echo "$response" | grep -q '"ok":true' || { echo "$response" >&2; exit 1; }
+            echo "Sent ${filename} to Telegram"
+          done < <(find artifacts -maxdepth 1 -type f -name '*.apk' -print | sort)
