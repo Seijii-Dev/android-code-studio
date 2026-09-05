@@ -25,9 +25,9 @@ import com.tom.rv2ide.treesitter.TSNode
 import com.tom.rv2ide.treesitter.TSQueryCapture
 import com.tom.rv2ide.treesitter.TSQueryCursor
 import com.tom.rv2ide.treesitter.TSTree
-import com.tom.rv2ide.treesitter.api.TreeSitterNode
-import com.tom.rv2ide.treesitter.api.TreeSitterQueryCapture
-import com.tom.rv2ide.treesitter.api.safeExecQueryCursor
+import com.axiom.rv2ide.treesitter.api.TreeSitterNode
+import com.axiom.rv2ide.treesitter.api.TreeSitterQueryCapture
+import com.axiom.rv2ide.treesitter.api.safeExecQueryCursor
 import com.tom.rv2ide.treesitter.string.UTF16String
 import java.util.Stack
 

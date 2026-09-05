@@ -21,9 +21,9 @@ import android.os.SystemClock
 import com.tom.rv2ide.treesitter.TSInputEdit
 import com.tom.rv2ide.treesitter.TSQueryCursor
 import com.tom.rv2ide.treesitter.TSTree
-import com.tom.rv2ide.treesitter.api.TreeSitterInputEdit
-import com.tom.rv2ide.treesitter.api.TreeSitterQueryCapture
-import com.tom.rv2ide.treesitter.api.safeExecQueryCursor
+import com.axiom.rv2ide.treesitter.api.TreeSitterInputEdit
+import com.axiom.rv2ide.treesitter.api.TreeSitterQueryCapture
+import com.axiom.rv2ide.treesitter.api.safeExecQueryCursor
 import com.tom.rv2ide.treesitter.string.UTF16String
 import io.github.rosemoe.sora.data.ObjectAllocator
 import io.github.rosemoe.sora.editor.ts.spans.TsSpanFactory

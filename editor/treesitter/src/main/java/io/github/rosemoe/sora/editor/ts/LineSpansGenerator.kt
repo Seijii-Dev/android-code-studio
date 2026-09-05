@@ -42,8 +42,8 @@ import com.tom.rv2ide.treesitter.TSInputEdit
 import com.tom.rv2ide.treesitter.TSQueryCapture
 import com.tom.rv2ide.treesitter.TSQueryCursor
 import com.tom.rv2ide.treesitter.TSTree
-import com.tom.rv2ide.treesitter.api.TreeSitterQueryCapture
-import com.tom.rv2ide.treesitter.api.safeExecQueryCursor
+import com.axiom.rv2ide.treesitter.api.TreeSitterQueryCapture
+import com.axiom.rv2ide.treesitter.api.safeExecQueryCursor
 import io.github.rosemoe.sora.editor.ts.spans.TsSpanFactory
 import io.github.rosemoe.sora.lang.styling.Span
 import io.github.rosemoe.sora.lang.styling.SpanFactory
