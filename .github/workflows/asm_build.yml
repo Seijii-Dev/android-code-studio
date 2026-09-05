@@ -129,6 +129,7 @@ jobs:
 
       - name: Send Release APKs to Telegram
         if: env.BUILD_TYPE == 'Release' && github.event_name != 'pull_request'
+        continue-on-error: true
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.CHAT_ID }}
@@ -142,23 +143,18 @@ jobs:
 
           API="https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}"
           COMMIT_MESSAGE="$(git log -1 --pretty=%s | cut -c1-180)"
-          CAPTION="Axiom ACS Release\nRun #${GITHUB_RUN_NUMBER} • ${GITHUB_SHA::12}\n${COMMIT_MESSAGE}"
+          printf -v CAPTION 'Axiom ACS Release\nRun #%s • %s\n%s' \
+            "$GITHUB_RUN_NUMBER" "${GITHUB_SHA::12}" "$COMMIT_MESSAGE"
 
           send_args=(-F "chat_id=${TELEGRAM_CHAT_ID}")
           if [ -n "$TELEGRAM_TOPIC_ID" ]; then
             send_args+=(-F "message_thread_id=${TELEGRAM_TOPIC_ID}")
           fi
 
-          response="$(curl --fail-with-body --silent --show-error --retry 3 --retry-delay 5 \
-            "${send_args[@]}" \
-            -F "text=${CAPTION}" \
-            "${API}/sendMessage")"
-          echo "$response" | grep -q '"ok":true' || { echo "$response" >&2; exit 1; }
-
           while IFS= read -r apk; do
             [ -n "$apk" ] || continue
             filename="$(basename "$apk")"
-            response="$(curl --fail-with-body --silent --show-error --retry 3 --retry-delay 5 \
+            response="$(curl --silent --show-error --retry 3 --retry-delay 5 \
               "${send_args[@]}" \
               -F "caption=${CAPTION}\nAPK: ${filename}" \
               -F "document=@${apk};type=application/vnd.android.package-archive" \
