@@ -92,6 +92,7 @@ jobs:
         run: |
           mkdir -p "core/app/build/intermediates/external_file_lib_dex_archives/${BUILD_TYPE_LOWER}/desugar${BUILD_TYPE}FileDependencies"
           mkdir -p "core/app/build/intermediates/l8_art_profile/${BUILD_TYPE_LOWER}/l8DexDesugarLib${BUILD_TYPE}"
+          touch "core/app/build/intermediates/l8_art_profile/${BUILD_TYPE_LOWER}/l8DexDesugarLib${BUILD_TYPE}/baseline-prof.txt"
 
       - name: Assemble APK
         env:
