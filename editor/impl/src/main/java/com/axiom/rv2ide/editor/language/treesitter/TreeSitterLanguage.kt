@@ -26,7 +26,7 @@ import com.axiom.rv2ide.editor.schemes.LanguageScheme
 import com.axiom.rv2ide.editor.schemes.LanguageSpecProvider.getLanguageSpec
 import com.axiom.rv2ide.editor.schemes.LocalCaptureSpecProvider.newLocalCaptureSpec
 import com.axiom.rv2ide.editor.utils.isNonBlankLine
-import com.axiom.rv2ide.treesitter.TSLanguage
+import com.tom.rv2ide.treesitter.TSLanguage
 import com.axiom.rv2ide.utils.IntPair
 import io.github.rosemoe.sora.editor.ts.TsTheme
 import io.github.rosemoe.sora.lang.Language.INTERRUPTION_LEVEL_STRONG

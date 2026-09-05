@@ -17,6 +17,9 @@
 
 package com.axiom.rv2ide.treesitter
 
+import com.tom.rv2ide.treesitter.TSPoint
+import com.tom.rv2ide.treesitter.TSRange
+
 /** The 0-based start line number. */
 val TSRange.startLine: Int
   get() = getStartPoint().getRow()

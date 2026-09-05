@@ -28,14 +28,14 @@ import com.axiom.rv2ide.lsp.models.TextEdit
 import com.axiom.rv2ide.lsp.xml.XMLLanguageServer
 import com.axiom.rv2ide.models.Range
 import com.axiom.rv2ide.projects.FileManager
-import com.axiom.rv2ide.treesitter.TSParser
-import com.axiom.rv2ide.treesitter.TSQuery
-import com.axiom.rv2ide.treesitter.TSQueryCapture
-import com.axiom.rv2ide.treesitter.TSQueryCursor
-import com.axiom.rv2ide.treesitter.TSQueryError
-import com.axiom.rv2ide.treesitter.TSQueryMatch
-import com.axiom.rv2ide.treesitter.TSTree
-import com.axiom.rv2ide.treesitter.xml.TSLanguageXml
+import com.tom.rv2ide.treesitter.TSParser
+import com.tom.rv2ide.treesitter.TSQuery
+import com.tom.rv2ide.treesitter.TSQueryCapture
+import com.tom.rv2ide.treesitter.TSQueryCursor
+import com.tom.rv2ide.treesitter.TSQueryError
+import com.tom.rv2ide.treesitter.TSQueryMatch
+import com.tom.rv2ide.treesitter.TSTree
+import com.tom.rv2ide.treesitter.xml.TSLanguageXml
 
 /** @author Akash Yadav */
 object AdvancedEditProvider {

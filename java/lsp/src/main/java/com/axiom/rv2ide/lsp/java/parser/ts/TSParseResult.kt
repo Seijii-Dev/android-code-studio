@@ -17,7 +17,7 @@
 
 package com.axiom.rv2ide.lsp.java.parser.ts
 
-import com.axiom.rv2ide.treesitter.TSTree
+import com.tom.rv2ide.treesitter.TSTree
 import java.net.URI
 import jdkx.tools.JavaFileObject
 

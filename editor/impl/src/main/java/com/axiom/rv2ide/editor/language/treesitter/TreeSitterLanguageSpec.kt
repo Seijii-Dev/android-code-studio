@@ -17,9 +17,9 @@
 
 package com.axiom.rv2ide.editor.language.treesitter
 
-import com.axiom.rv2ide.treesitter.TSLanguage
-import com.axiom.rv2ide.treesitter.TSQuery
-import com.axiom.rv2ide.treesitter.TSQueryError
+import com.tom.rv2ide.treesitter.TSLanguage
+import com.tom.rv2ide.treesitter.TSQuery
+import com.tom.rv2ide.treesitter.TSQueryError
 import io.github.rosemoe.sora.editor.ts.TsLanguageSpec
 import java.io.Closeable
 

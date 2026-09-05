@@ -53,7 +53,7 @@ import com.axiom.rv2ide.resources.localization.LocaleProvider
 import com.axiom.rv2ide.stats.AndroidIDEStats
 import com.axiom.rv2ide.stats.StatUploadWorker
 import com.axiom.rv2ide.syntax.colorschemes.SchemeAndroidIDE
-import com.axiom.rv2ide.treesitter.TreeSitter
+import com.tom.rv2ide.treesitter.TreeSitter
 import com.axiom.rv2ide.ui.themes.IDETheme
 import com.axiom.rv2ide.ui.themes.IThemeManager
 import com.axiom.rv2ide.utils.ChartMemoryCleanupTask

@@ -17,8 +17,8 @@
 
 package com.axiom.rv2ide.editor.utils
 
-import com.axiom.rv2ide.treesitter.TSNode
-import com.axiom.rv2ide.treesitter.TSTree
+import com.tom.rv2ide.treesitter.TSNode
+import com.tom.rv2ide.treesitter.TSTree
 import com.axiom.rv2ide.treesitter.getNodeAt
 import io.github.rosemoe.sora.text.Content
 import io.github.rosemoe.sora.text.TextUtils

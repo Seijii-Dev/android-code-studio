@@ -17,7 +17,7 @@
 
 package com.axiom.rv2ide.treesitter.api
 
-import com.axiom.rv2ide.treesitter.TSQuery
+import com.tom.rv2ide.treesitter.TSQuery
 import com.axiom.rv2ide.utils.DefaultRecyclable
 import com.axiom.rv2ide.utils.RecyclableObjectPool
 

@@ -17,8 +17,8 @@
 
 package com.axiom.rv2ide.treesitter.api
 
-import com.axiom.rv2ide.treesitter.TSInputEdit
-import com.axiom.rv2ide.treesitter.TSPoint
+import com.tom.rv2ide.treesitter.TSInputEdit
+import com.tom.rv2ide.treesitter.TSPoint
 import com.axiom.rv2ide.utils.DefaultRecyclable
 import com.axiom.rv2ide.utils.RecyclableObjectPool
 

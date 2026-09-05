@@ -24,7 +24,7 @@ import com.axiom.rv2ide.editor.language.treesitter.predicates.EqualPredicate
 import com.axiom.rv2ide.editor.language.treesitter.predicates.MatchPredicate
 import com.axiom.rv2ide.editor.language.treesitter.predicates.NotEqualPredicate
 import com.axiom.rv2ide.editor.language.treesitter.predicates.NotMatchPredicate
-import com.axiom.rv2ide.treesitter.TSLanguage
+import com.tom.rv2ide.treesitter.TSLanguage
 import io.github.rosemoe.sora.editor.ts.LocalsCaptureSpec
 import io.github.rosemoe.sora.editor.ts.TsLanguageSpec
 import java.io.FileNotFoundException

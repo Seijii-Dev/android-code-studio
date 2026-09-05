@@ -17,11 +17,11 @@
 
 package com.axiom.rv2ide.lsp.java.parser.ts
 
-import com.axiom.rv2ide.treesitter.TSQuery
-import com.axiom.rv2ide.treesitter.TSQueryCursor
-import com.axiom.rv2ide.treesitter.TSQueryMatch
-import com.axiom.rv2ide.treesitter.TSTree
-import com.axiom.rv2ide.treesitter.java.TSLanguageJava
+import com.tom.rv2ide.treesitter.TSQuery
+import com.tom.rv2ide.treesitter.TSQueryCursor
+import com.tom.rv2ide.treesitter.TSQueryMatch
+import com.tom.rv2ide.treesitter.TSTree
+import com.tom.rv2ide.treesitter.java.TSLanguageJava
 
 /**
  * Helper class to prune method bodies in Java source code using.

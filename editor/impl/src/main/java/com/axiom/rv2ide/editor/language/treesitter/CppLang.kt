@@ -23,7 +23,7 @@ import com.axiom.rv2ide.lsp.api.ILanguageServer
 import com.axiom.rv2ide.lsp.api.ILanguageServerRegistry
 import com.axiom.rv2ide.lsp.clang.ClangLanguageServer
 import io.github.rosemoe.sora.util.MyCharacter
-import com.axiom.rv2ide.treesitter.cpp.TSLanguageCpp
+import com.tom.rv2ide.treesitter.cpp.TSLanguageCpp
 import io.github.rosemoe.sora.lang.Language.INTERRUPTION_LEVEL_STRONG
 
 /**

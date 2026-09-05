@@ -17,24 +17,24 @@
 
 package com.axiom.rv2ide.treesitter.api
 
-import com.axiom.rv2ide.treesitter.TSInputEdit
-import com.axiom.rv2ide.treesitter.TSLanguage
-import com.axiom.rv2ide.treesitter.TSLookaheadIterator
-import com.axiom.rv2ide.treesitter.TSNode
-import com.axiom.rv2ide.treesitter.TSParser
-import com.axiom.rv2ide.treesitter.TSPoint
-import com.axiom.rv2ide.treesitter.TSQuery
-import com.axiom.rv2ide.treesitter.TSQueryCapture
-import com.axiom.rv2ide.treesitter.TSQueryCursor
-import com.axiom.rv2ide.treesitter.TSQueryMatch
-import com.axiom.rv2ide.treesitter.TSQueryPredicateStep
-import com.axiom.rv2ide.treesitter.TSRange
-import com.axiom.rv2ide.treesitter.TSTree
-import com.axiom.rv2ide.treesitter.TSTreeCursor
-import com.axiom.rv2ide.treesitter.TSTreeCursorNode
-import com.axiom.rv2ide.treesitter.string.SynchronizedUTF16String
-import com.axiom.rv2ide.treesitter.string.UTF16String
-import com.axiom.rv2ide.treesitter.util.TSObjectFactory
+import com.tom.rv2ide.treesitter.TSInputEdit
+import com.tom.rv2ide.treesitter.TSLanguage
+import com.tom.rv2ide.treesitter.TSLookaheadIterator
+import com.tom.rv2ide.treesitter.TSNode
+import com.tom.rv2ide.treesitter.TSParser
+import com.tom.rv2ide.treesitter.TSPoint
+import com.tom.rv2ide.treesitter.TSQuery
+import com.tom.rv2ide.treesitter.TSQueryCapture
+import com.tom.rv2ide.treesitter.TSQueryCursor
+import com.tom.rv2ide.treesitter.TSQueryMatch
+import com.tom.rv2ide.treesitter.TSQueryPredicateStep
+import com.tom.rv2ide.treesitter.TSRange
+import com.tom.rv2ide.treesitter.TSTree
+import com.tom.rv2ide.treesitter.TSTreeCursor
+import com.tom.rv2ide.treesitter.TSTreeCursorNode
+import com.tom.rv2ide.treesitter.string.SynchronizedUTF16String
+import com.tom.rv2ide.treesitter.string.UTF16String
+import com.tom.rv2ide.treesitter.util.TSObjectFactory
 
 /**
  * [TSObjectFactory] implementation for AndroidIDE.
