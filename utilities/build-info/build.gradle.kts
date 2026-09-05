@@ -17,13 +17,13 @@
 
 
 import com.android.SdkConstants
-import com.tom.rv2ide.build.config.AGP_VERSION_MINIMUM
-import com.tom.rv2ide.build.config.BuildConfig
-import com.tom.rv2ide.build.config.ProjectConfig
-import com.tom.rv2ide.build.config.VersionUtils
-import com.tom.rv2ide.build.config.downloadVersion
-import com.tom.rv2ide.build.config.replaceContents
-import com.tom.rv2ide.build.config.simpleVersionName
+import com.axiom.rv2ide.build.config.AGP_VERSION_MINIMUM
+import com.axiom.rv2ide.build.config.BuildConfig
+import com.axiom.rv2ide.build.config.ProjectConfig
+import com.axiom.rv2ide.build.config.VersionUtils
+import com.axiom.rv2ide.build.config.downloadVersion
+import com.axiom.rv2ide.build.config.replaceContents
+import com.axiom.rv2ide.build.config.simpleVersionName
 
 plugins {
   //noinspection JavaPluginLanguageLevel
@@ -43,7 +43,7 @@ val buildInfoGenDir: Provider<Directory> = project.layout.buildDirectory.dir("ge
 sourceSets { getByName("main").java.srcDir(buildInfoGenDir) }
 
 tasks.create("generateBuildInfo") {
-  val buildInfoPath = "com/tom/rv2ide/buildinfo/BuildInfo.java"
+  val buildInfoPath = "com/axiom/rv2ide/buildinfo/BuildInfo.java"
   val buildInfo = buildInfoGenDir.get().file(buildInfoPath)
   val buildInfoIn = project.file("src/main/java/${buildInfoPath}.in")
 

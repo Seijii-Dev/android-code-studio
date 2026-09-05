@@ -1,5 +1,5 @@
-import com.tom.rv2ide.plugins.NoDesugarPlugin
-import com.tom.rv2ide.build.config.BuildConfig
+import com.axiom.rv2ide.plugins.NoDesugarPlugin
+import com.axiom.rv2ide.build.config.BuildConfig
 import java.io.File
 
 apply { plugin(NoDesugarPlugin::class.java) }

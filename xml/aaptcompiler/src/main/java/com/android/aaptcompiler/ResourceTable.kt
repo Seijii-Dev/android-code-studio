@@ -2,12 +2,12 @@ package com.android.aaptcompiler
 
 import androidx.collection.mutableIntObjectMapOf
 import com.android.aapt.Resources
-import com.tom.rv2ide.layoutlib.resources.ResourceVisibility
-import com.tom.rv2ide.xml.res.IResourceEntry
-import com.tom.rv2ide.xml.res.IResourceGroup
-import com.tom.rv2ide.xml.res.IResourceTable
-import com.tom.rv2ide.xml.res.IResourceTablePackage
-import com.tom.rv2ide.xml.res.ISearchResult
+import com.axiom.rv2ide.layoutlib.resources.ResourceVisibility
+import com.axiom.rv2ide.xml.res.IResourceEntry
+import com.axiom.rv2ide.xml.res.IResourceGroup
+import com.axiom.rv2ide.xml.res.IResourceTable
+import com.axiom.rv2ide.xml.res.IResourceTablePackage
+import com.axiom.rv2ide.xml.res.ISearchResult
 import java.io.File
 import java.util.SortedMap
 import java.util.TreeMap

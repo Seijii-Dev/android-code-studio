@@ -1,6 +1,6 @@
 ## Android Device Requirements
 
-The following requirements outline the minimum and recommended specifications for running the Android Code Studio smoothly on Android devices.
+The following requirements outline the minimum and recommended specifications for running the Axiom ACS smoothly on Android devices.
 
 ---
 

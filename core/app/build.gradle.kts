@@ -17,20 +17,20 @@
 
 @file:Suppress("UnstableApiUsage")
 
-import com.tom.rv2ide.build.config.BuildConfig
-import com.tom.rv2ide.desugaring.utils.JavaIOReplacements.applyJavaIOReplacements
-import com.tom.rv2ide.plugins.AndroidIDEAssetsPlugin
+import com.axiom.rv2ide.build.config.BuildConfig
+import com.axiom.rv2ide.desugaring.utils.JavaIOReplacements.applyJavaIOReplacements
+import com.axiom.rv2ide.plugins.AndroidIDEAssetsPlugin
 import java.util.Properties
 
 plugins {
-  id("com.tom.rv2ide.core-app")
+  id("com.axiom.rv2ide.core-app")
   id("com.android.application")
   id("kotlin-android")
   id("kotlin-kapt")
   id("kotlinx-serialization")
   id("kotlin-parcelize")
   id("androidx.navigation.safeargs.kotlin")
-  id("com.tom.rv2ide.desugaring")
+  id("com.axiom.rv2ide.desugaring")
 }
 
 apply { plugin(AndroidIDEAssetsPlugin::class.java) }
@@ -151,7 +151,7 @@ android {
         )
       }
 
-      val appName = "android-code-studio"
+      val appName = "axiom-acs"
       val fileName =
           if (buildType == "release") {
             "${appName}-${archSuffix}-${versionName}.apk"

@@ -1,4 +1,4 @@
-name: Build Android Code Studio
+name: Build Axiom ACS
 
 on:
   push:
@@ -77,7 +77,7 @@ jobs:
             -keyalg RSA \
             -keysize 2048 \
             -validity 1 \
-            -dname 'CN=Android Code Studio CI, OU=CI, O=Android Code Studio, L=Unknown, ST=Unknown, C=US'
+            -dname 'CN=Axiom ACS CI, OU=CI, O=Axiom ACS, L=Unknown, ST=Unknown, C=US'
 
       - name: Make Gradle wrapper executable
         run: chmod +x ./gradlew
@@ -117,13 +117,13 @@ jobs:
           fi
           cp "${APKS[@]}" artifacts/
           (cd artifacts && sha256sum ./*.apk > SHA256SUMS.txt)
-          zip -j "artifacts/android-code-studio-${BUILD_TYPE_LOWER}-${GITHUB_RUN_NUMBER}.zip" artifacts/*.apk artifacts/SHA256SUMS.txt
+          zip -j "artifacts/axiom-acs-${BUILD_TYPE_LOWER}-${GITHUB_RUN_NUMBER}.zip" artifacts/*.apk artifacts/SHA256SUMS.txt
 
       - name: Upload APK artifacts
         uses: actions/upload-artifact@v4
         if: success()
         with:
-          name: android-code-studio-${{ env.BUILD_TYPE_LOWER }}
+          name: axiom-acs-${{ env.BUILD_TYPE_LOWER }}
           path: artifacts/*
           if-no-files-found: error
 
@@ -142,7 +142,7 @@ jobs:
 
           API="https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}"
           COMMIT_MESSAGE="$(git log -1 --pretty=%s | cut -c1-180)"
-          CAPTION="Android Code Studio Release\nRun #${GITHUB_RUN_NUMBER} • ${GITHUB_SHA::12}\n${COMMIT_MESSAGE}"
+          CAPTION="Axiom ACS Release\nRun #${GITHUB_RUN_NUMBER} • ${GITHUB_SHA::12}\n${COMMIT_MESSAGE}"
 
           send_args=(-F "chat_id=${TELEGRAM_CHAT_ID}")
           if [ -n "$TELEGRAM_TOPIC_ID" ]; then

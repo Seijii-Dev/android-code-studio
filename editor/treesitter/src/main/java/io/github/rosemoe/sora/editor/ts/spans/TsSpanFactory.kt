@@ -21,7 +21,7 @@
  */
 package io.github.rosemoe.sora.editor.ts.spans
 
-import com.tom.rv2ide.treesitter.TSQueryCapture
+import com.axiom.rv2ide.treesitter.TSQueryCapture
 import io.github.rosemoe.sora.lang.styling.Span
 
 /**

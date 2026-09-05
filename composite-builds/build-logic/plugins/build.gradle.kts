@@ -48,21 +48,21 @@ dependencies {
 
 gradlePlugin {
   plugins {
-    create("com.tom.rv2ide.build") {
-      id = "com.tom.rv2ide.build"
-      implementationClass = "com.tom.rv2ide.plugins.AndroidIDEPlugin"
+    create("com.axiom.rv2ide.build") {
+      id = "com.axiom.rv2ide.build"
+      implementationClass = "com.axiom.rv2ide.plugins.AndroidIDEPlugin"
     }
-    create("com.tom.rv2ide.core-app") {
-      id = "com.tom.rv2ide.core-app"
-      implementationClass = "com.tom.rv2ide.plugins.AndroidIDECoreAppPlugin"
+    create("com.axiom.rv2ide.core-app") {
+      id = "com.axiom.rv2ide.core-app"
+      implementationClass = "com.axiom.rv2ide.plugins.AndroidIDECoreAppPlugin"
     }
-    create("com.tom.rv2ide.build.propsparser") {
-      id = "com.tom.rv2ide.build.propsparser"
-      implementationClass = "com.tom.rv2ide.plugins.PropertiesParserPlugin"
+    create("com.axiom.rv2ide.build.propsparser") {
+      id = "com.axiom.rv2ide.build.propsparser"
+      implementationClass = "com.axiom.rv2ide.plugins.PropertiesParserPlugin"
     }
-    create("com.tom.rv2ide.build.lexergenerator") {
-      id = "com.tom.rv2ide.build.lexergenerator"
-      implementationClass = "com.tom.rv2ide.plugins.LexerGeneratorPlugin"
+    create("com.axiom.rv2ide.build.lexergenerator") {
+      id = "com.axiom.rv2ide.build.lexergenerator"
+      implementationClass = "com.axiom.rv2ide.plugins.LexerGeneratorPlugin"
     }
   }
 }

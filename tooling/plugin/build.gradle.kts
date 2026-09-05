@@ -1,23 +1,23 @@
 /*
- *  This file is part of AndroidCodeStudio.
+ *  This file is part of AxiomACS.
  *
- *  AndroidCodeStudio is free software: you can redistribute it and/or modify
+ *  AxiomACS is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidCodeStudio is distributed in the hope that it will be useful,
+ *  AxiomACS is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidCodeStudio.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AxiomACS.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-import com.tom.rv2ide.build.config.AGP_VERSION_MINIMUM
-import com.tom.rv2ide.build.config.BuildConfig
-import com.tom.rv2ide.build.config.ProjectConfig
+import com.axiom.rv2ide.build.config.AGP_VERSION_MINIMUM
+import com.axiom.rv2ide.build.config.BuildConfig
+import com.axiom.rv2ide.build.config.ProjectConfig
 
 plugins {
     id("java-gradle-plugin")
@@ -25,7 +25,7 @@ plugins {
     id("maven-publish")
 }
 
-description = "Gradle Plugin for projects that are built with AndroidCS"
+description = "Gradle Plugin for projects that are built with Axiom ACS"
 
 dependencies {
     implementation(projects.tooling.pluginConfig)

@@ -1,18 +1,18 @@
 /*
- *  This file is part of AndroidCodeStudio.
+ *  This file is part of AxiomACS.
  *
- *  AndroidCodeStudio is free software: you can redistribute it and/or modify
+ *  AxiomACS is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidCodeStudio is distributed in the hope that it will be useful,
+ *  AxiomACS is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU General Public License for more details.
  *
  *  You should have received a copy of the GNU General Public License
- *   along with AndroidCodeStudio.  If not, see <https://www.gnu.org/licenses/>.
+ *   along with AxiomACS.  If not, see <https://www.gnu.org/licenses/>.
  */
 
 @file:Suppress("UnstableApiUsage")
@@ -50,7 +50,7 @@ dependencyResolutionManagement {
       this.name = build
       dependencySubstitution {
         for (module in modules) {
-          substitute(module("com.tom.rv2ide.build:${module}"))
+          substitute(module("com.axiom.rv2ide.build:${module}"))
             .using(project(":${module}"))
         }
       }
@@ -76,7 +76,7 @@ gradle.rootProject {
     project.setProperty("version", baseVersion)
 }
 
-rootProject.name = "AndroidCodeStudio"
+rootProject.name = "AxiomACS"
 
 include(
   ":annotation:annotations",

@@ -1,18 +1,18 @@
 /*
- *  This file is part of AndroidCodeStudio.
+ *  This file is part of AxiomACS.
  *
- *  AndroidCodeStudio is free software: you can redistribute it and/or modify
+ *  AxiomACS is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
  *  the Free Software Foundation, either version 3 of the License, or
  *  (at your option) any later version.
  *
- *  AndroidCodeStudio is distributed in the hope that it will be useful,
+ *  AxiomACS is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
  *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *  GNU Lesser General Public License for more details.
  *
  *  You should have received a copy of the GNU Lesser General Public License
- *  along with AndroidCodeStudio.  If not, see <https://www.gnu.org/licenses/>.
+ *  along with AxiomACS.  If not, see <https://www.gnu.org/licenses/>.
  */
   
 package io.github.mohammedbaqernull.logger.configurations
@@ -22,6 +22,6 @@ package io.github.mohammedbaqernull.logger.configurations
 */
 
 // Change this package name to match your application id ( Logger app )
-// com.tom.rv2ide = AndroidCS package name which is using the LogWire for capturing logs from apps that built by AndroidCS
+// com.axiom.rv2ide = Axiom ACS package name which is using the LogWire for capturing logs from apps that built by Axiom ACS
 
-const val PACKAGE_NAME: String = "com.tom.rv2ide"
+const val PACKAGE_NAME: String = "com.axiom.rv2ide"
