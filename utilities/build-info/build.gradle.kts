@@ -53,7 +53,9 @@ tasks.create("generateBuildInfo") {
       comment = "//",
       candidates =
       arrayOf(
-        "PACKAGE_NAME" to BuildConfig.packageName,
+        // This is the Android application ID, not the source namespace. It is
+        // used by the permission settings intent and must target the installed app.
+        "PACKAGE_NAME" to "com.tom.rv2ide",
         // "MVN_GROUP_ID" to BuildConfig.packageName,
         "MVN_GROUP_ID" to "io.github.mohammed-baqer-null",
 
