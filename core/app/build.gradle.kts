@@ -66,7 +66,9 @@ android {
   namespace = BuildConfig.packageName
 
   defaultConfig {
-    applicationId = BuildConfig.packageName
+    // The bundled AndroidIDE bootstrap binaries have a hardcoded /data/data
+    // prefix and require the original application ID at runtime.
+    applicationId = "com.tom.rv2ide"
     vectorDrawables.useSupportLibrary = true
   }
   

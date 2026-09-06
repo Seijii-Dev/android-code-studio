@@ -31,8 +31,9 @@ android {
     defaultConfig {
         buildConfigField("String", "TERMUX_PACKAGE_VARIANT", "\"" + packageVariant + "\"") // Used by TermuxApplication class
 
-        manifestPlaceholders["TERMUX_PACKAGE_NAME"] = BuildConfig.packageName
-        manifestPlaceholders["TERMUX_APP_NAME"] = "AndroidIDE"
+        // Bootstrap binaries use the original package-derived /data/data path.
+        manifestPlaceholders["TERMUX_PACKAGE_NAME"] = "com.tom.rv2ide"
+        manifestPlaceholders["TERMUX_APP_NAME"] = "Axiom ACS"
     }
 
     lint.disable += "ProtectedPermissions"
